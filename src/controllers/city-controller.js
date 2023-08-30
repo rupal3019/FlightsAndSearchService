@@ -62,7 +62,7 @@ const update = async (req,res) => {
     }
 }
 
-const getCity = async (req,res) => {
+const get = async (req,res) => {
     try{
         const city = await cityService.getCity(req.params.id);
         return res.status(200).json({
@@ -81,3 +81,10 @@ const getCity = async (req,res) => {
         });
     }
 }
+
+module.exports = {
+    create,
+    update,
+    destroy,
+    get
+};
